@@ -3,28 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expérience Premium de Formation - Facile à Personnaliser</title>
-    
+    <title>Créé par – Coaching IA Dirigeant</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-    
+
     <style>
         /* ======================================================================
            ZONE DE PERSONNALISATION DES COULEURS - MODIFIEZ ICI
            ====================================================================== */
-        
         :root {
-            /* CHANGER LES COULEURS CI-DESSOUS (remplacez les codes couleur #XXXXXX) */
-            --couleur-principale: #0a2540;   /* Couleur foncée pour titres et fond menu */
-            --couleur-accent: #00d4ff;       /* Couleur des boutons et accents */
-            --couleur-fond: #ffffff;         /* Couleur de fond de page */
-            --couleur-texte: #0a2540;        /* Couleur du texte principal */
-            --couleur-texte-leger: #64748b;  /* Couleur du texte secondaire */
-            --couleur-carte: #f8fafc;        /* Couleur de fond des sections */
+            /* COULEURS CORPORATE */
+            --couleur-principale: #3372fd;   /* Bleu principal */
+            --couleur-accent: #f2f2f0;       /* Gris très clair / accent doux */
+            --couleur-fond: #ffffff;         /* Fond général */
+            --couleur-texte: #0a2540;        /* Texte principal (lisibilité) */
+            --couleur-texte-leger: #64748b;  /* Texte secondaire */
+            --couleur-carte: #f2f2f0;        /* Fond des sections/cartes */
         }
-        
-        /* NE PAS MODIFIER LE CODE EN DESSOUS (sauf si vous savez ce que vous faites) */
-        
+        /* ================================================================
+           NE PAS MODIFIER LE CODE EN DESSOUS (sauf si vous savez ce que vous faites)
+           ================================================================ */
         body {
             font-family: 'Inter', sans-serif;
             color: var(--couleur-texte);
@@ -33,26 +32,28 @@
             margin: 0;
             padding: 0;
         }
-        
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
-        
         header {
             background-color: var(--couleur-principale);
             color: white;
             padding: 30px 0;
             text-align: center;
         }
-        
         .logo {
             font-size: 28px;
             font-weight: 700;
             letter-spacing: -0.5px;
         }
-        
+        .logo-img {
+            height: 28px;
+            vertical-align: middle;
+            margin: 0 6px;
+            filter: brightness(0) invert(1); /* assure visibilité sur fond bleu */
+        }
         nav {
             background-color: var(--couleur-principale);
             position: sticky;
@@ -61,7 +62,6 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             padding: 0;
         }
-        
         nav ul {
             display: flex;
             justify-content: center;
@@ -69,11 +69,9 @@
             margin: 0;
             list-style: none;
         }
-        
         nav ul li {
             margin: 0 20px;
         }
-        
         nav ul li a {
             color: white;
             text-decoration: none;
@@ -83,11 +81,9 @@
             position: relative;
             transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
         nav ul li a:hover {
             color: var(--couleur-accent);
         }
-        
         nav ul li a:after {
             content: '';
             position: absolute;
@@ -98,11 +94,9 @@
             background-color: var(--couleur-accent);
             transition: width 0.15s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
         nav ul li a:hover:after {
             width: 100%;
         }
-        
         section {
             margin: 60px 0;
             padding: 50px;
@@ -110,35 +104,30 @@
             background-color: var(--couleur-carte);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
         }
-        
         h1, h2, h3 {
             color: var(--couleur-principale);
             margin-bottom: 20px;
             line-height: 1.3;
         }
-        
         h1 {
             font-size: 36px;
             font-weight: 700;
             letter-spacing: -0.5px;
         }
-        
         h2 {
             font-size: 28px;
             font-weight: 600;
-            border-bottom: 3px solid var(--couleur-accent);
+            border-bottom: 3px solid var(--couleur-principale);
             padding-bottom: 10px;
             display: inline-block;
             margin-bottom: 30px;
         }
-        
         p {
             margin-bottom: 25px;
             color: var(--couleur-texte-leger);
             font-size: 16px;
             max-width: 800px;
         }
-        
         .sessions-container {
             display: flex;
             flex-wrap: wrap;
@@ -146,7 +135,6 @@
             margin: 30px 0;
             gap: 15px;
         }
-        
         .session-button {
             background-color: var(--couleur-principale);
             color: white;
@@ -160,17 +148,15 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
             min-width: 160px;
         }
-        
         .session-button:hover {
             background-color: var(--couleur-accent);
+            color: var(--couleur-principale);
             transform: translateY(-3px);
             box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
         }
-        
         .session-button:active {
             transform: translateY(0);
         }
-        
         .platform-card, .resource-card {
             border-radius: 12px;
             padding: 35px;
@@ -179,12 +165,10 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
             transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
         .platform-card:hover, .resource-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
         }
-        
         .btn {
             display: inline-block;
             background-color: var(--couleur-accent);
@@ -198,24 +182,20 @@
             margin-top: 20px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
         }
-        
         .btn:hover {
             background-color: var(--couleur-principale);
             color: white;
             transform: translateY(-3px);
             box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
         }
-        
         .btn:active {
             transform: translateY(0);
         }
-        
         h3 {
             font-size: 22px;
             margin-bottom: 15px;
             font-weight: 600;
         }
-        
         footer {
             background-color: var(--couleur-principale);
             color: white;
@@ -228,43 +208,35 @@
             flex-wrap: wrap;
             gap: 40px;
         }
-        
         .icon {
             margin-right: 10px;
-            color: var(--couleur-accent);
+            color: var(--couleur-principale);
         }
-        
         /* Optimisations responsives */
         @media (max-width: 768px) {
             nav ul {
                 flex-direction: column;
                 align-items: center;
             }
-            
             nav ul li {
                 margin: 5px 0;
             }
-            
             section {
                 padding: 30px 20px;
             }
-            
             .platform-card, .resource-card {
                 padding: 25px;
             }
-            
             .session-button {
                 width: 100%;
             }
         }
-        
         /* Ajout pour centrer les titres de section */
         section > h2 {
             text-align: center;
             display: block;
             width: 100%;
         }
-        
         html {
             scroll-behavior: smooth;
         }
@@ -274,7 +246,7 @@
 
 <header>
     <div class="container">
-        <div class="logo">Coaching IA Dirigeant</div>
+        <div class="logo">Créé par <img src="logo.svg" alt="Logo de l'entreprise" class="logo-img"> – Coaching IA Dirigeant</div>
     </div>
 </header>
 
@@ -290,9 +262,7 @@
     <section id="coaching">
         <h2>Sessions de Coaching</h2>
         <p>Accédez à vos supports de coaching Canva</p>
-        <div class="sessions-container" id="sessions-buttons">
-            <!-- Les boutons de sessions seront générés automatiquement ici -->
-        </div>
+        <div class="sessions-container" id="sessions-buttons"></div>
     </section>
 
     <section id="elearning">
@@ -306,13 +276,11 @@
 
     <section id="ressources">
         <h2>Ressources complémentaires</h2>
-        
         <div class="resource-card">
-            <h3><i class="fas fa-book icon"></i>Documentation Notion</h3>
+            <h3><i class="fas fa-book icon"></i>Ressources IA</h3>
             <p>Accédez à une banque de prompt, des tutoriels vidéos et vos ressources personnalisées</p>
             <a href="#" id="notion-link" class="btn">Ouvrir Notion</a>
         </div>
-        
         <div class="resource-card">
             <h3><i class="fas fa-laptop-code icon"></i>Simulateur</h3>
             <p>Utilisez votre simulateur personnel conçu par les équipes Mister IA</p>
@@ -327,90 +295,47 @@
 </footer>
 
 <script>
-    /********************************************************************************
-     * ZONE DE CONFIGURATION - MODIFIEZ UNIQUEMENT CETTE PARTIE
-     * 
-     * INSTRUCTIONS SIMPLES:
-     * 
-     * 1) POUR MODIFIER UNE COULEUR: 
-     *    Allez tout en haut du fichier dans la section "ZONE DE PERSONNALISATION DES COULEURS"
-     *    et changez les codes couleur (par exemple: #0a2540)
-     * 
-     * 2) POUR MODIFIER LES SESSIONS: 
-     *    Changez, ajoutez ou supprimez des sessions dans la liste ci-dessous
-     * 
-     * 3) POUR MODIFIER LES LIENS ET TEXTES:
-     *    Changez simplement le texte entre guillemets ci-dessous
-     ********************************************************************************/
-    
-    // ======== CONFIGURATION DES SESSIONS DE COACHING ========
-    // POUR AJOUTER UNE SESSION: Copiez une ligne et collez-la en-dessous
-    // POUR SUPPRIMER UNE SESSION: Supprimez simplement une ligne complète
-    // N'OUBLIEZ PAS LES VIRGULES entre chaque session!
     const SESSIONS = [
         { titre: "Session 1", lien: "https://www.canva.com/design/session1" },
         { titre: "Session 2", lien: "https://www.canva.com/design/session2" },
         { titre: "Session 3", lien: "https://www.canva.com/design/session3" },
         { titre: "Session 4", lien: "https://www.canva.com/design/session4" },
         { titre: "Session 5", lien: "https://www.canva.com/design/session5" }
-        // POUR AJOUTER UNE NOUVELLE SESSION, COPIEZ ET COLLEZ LA LIGNE CI-DESSUS
     ];
-    
-    // ======== CONFIGURATION DE LA PLATEFORME E-LEARNING ========
-    // CHANGEZ LE TEXTE ENTRE GUILLEMETS POUR MODIFIER
+
     const PLATEFORME = {
-        nom: "Ma Plateforme E-learning",  // CHANGEZ LE NOM ICI
-        description: "Retrouvez plus de 20h de vidéos, de fiches pratiques et de QCM pour approfondir vos connaissances",  // CHANGEZ LA DESCRIPTION ICI
-        lien: "https://www.ma-plateforme-elearning.com"  // CHANGEZ L'URL ICI
+        nom: "Ma Plateforme E-learning",
+        description: "Retrouvez plus de 20h de vidéos, de fiches pratiques et de QCM pour approfondir vos connaissances",
+        lien: "https://www.ma-plateforme-elearning.com"
     };
-    
-    // ======== CONFIGURATION DES RESSOURCES COMPLÉMENTAIRES ========
-    // CHANGEZ LES LIENS ENTRE GUILLEMETS
+
     const RESSOURCES = {
-        notion: "https://www.notion.so/mon-espace",  // CHANGEZ L'URL NOTION ICI
-        simulateur: "https://www.simulateur-formation.com"  // CHANGEZ L'URL DU SIMULATEUR ICI
+        notion: "https://www.notion.so/mon-espace",
+        simulateur: "https://www.simulateur-formation.com"
     };
-    
-    
-    
-    /* ================================================================
-       NE PAS MODIFIER LE CODE EN DESSOUS - CODE TECHNIQUE
-       ================================================================ */
-    
-    // Fonction pour générer les boutons des sessions
+
     function creerBoutonsSessions() {
         const conteneur = document.getElementById('sessions-buttons');
-        conteneur.innerHTML = ''; // Vide le conteneur
-        
-        // Crée un bouton pour chaque session configurée
+        conteneur.innerHTML = '';
         SESSIONS.forEach(session => {
             const bouton = document.createElement('button');
             bouton.className = 'session-button';
             bouton.textContent = session.titre;
-            
-            // Quand on clique sur le bouton, ouvre le lien dans un nouvel onglet
             bouton.addEventListener('click', function() {
                 window.open(session.lien, '_blank');
             });
-            
             conteneur.appendChild(bouton);
         });
     }
-    
-    // Fonction pour configurer la section e-learning
     function configurerElearning() {
         document.getElementById('platform-name').textContent = PLATEFORME.nom;
         document.getElementById('platform-description').textContent = PLATEFORME.description;
         document.getElementById('platform-link').href = PLATEFORME.lien;
     }
-    
-    // Fonction pour configurer les ressources complémentaires
     function configurerRessources() {
         document.getElementById('notion-link').href = RESSOURCES.notion;
         document.getElementById('simulator-link').href = RESSOURCES.simulateur;
     }
-    
-    // Exécute toutes les configurations quand la page est chargée
     document.addEventListener('DOMContentLoaded', function() {
         creerBoutonsSessions();
         configurerElearning();
